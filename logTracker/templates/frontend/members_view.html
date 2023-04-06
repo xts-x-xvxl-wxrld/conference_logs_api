@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Date of Birth</th>
+                <th>Serial Number</th>
+                <th>Edit</th>
+                <th>Check In</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+                <tr>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.surname }}</td>
+                    <td>{{ member.date_of_birth }}</td>
+                    <td>{{ member.serial_number }}</td>
+                    <td>
+                        <a href="{% url 'edit_member' member.id %}" class="btn btn-primary">Edit</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'check_in_member' member.id %}" class="btn btn-primary">Check In</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
