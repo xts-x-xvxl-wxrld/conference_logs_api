@@ -5,7 +5,7 @@ from django.urls import path
 urlpatterns = [
     path('login/', logIn, name='login'),
     path('register/', register, name='register'),
-    path('members/', allMembers, name='members'),
+    path('', allMembers, name='members'),
     path('member/<int:member_id>/edit/', editMember, name='edit_member'),
     path('member/<int:member_id>/check_in/', memberCheckIn, name='check_in_member'),
     path('check_in_members/', allCheckIn, name='check_in_all'),
